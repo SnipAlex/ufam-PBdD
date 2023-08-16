@@ -2,22 +2,28 @@ import sys
 import io
 import re
 import nltk
-nltk.download('stopwords',quiet=True)
-from nltk.corpus import stopwords
+
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
-#stop_words = set(stopwords.words('english'))
-input_stream = io.TextIOWrapper(sys.stdin.buffer, encoding='latin1')
-for line in input_stream:
-  line = line.strip()
-  line = re.sub(r'[^\w\s]', '',line)
-  line = re.sub(r'[^A-Za-z\s]+', '',line)
-  line = line.lower()
-  for x in line:
-    if x in punctuations:
-      line=line.replace(x, " ") 
+class Mapper
+  def __init__(self):
+    H = {}
+  def Map(self):
+    for line in sys.stdin:
+      line = line.strip()
+      line = re.sub(r'[^\w\s]', '',line)
+      line = line.lower()
+      for x in line:
+        if x in punctuations:
+          line = line.replace(x, " ")
+      words = line.split()
+      self.H[words] += 1
+      
+  def Close(self):
+    for word, count in self.H.items():
+      print(f"{word}:{count}")
 
-  words=line.split()
-  for word in words: 
-    # if word not in stop_words:
-    print('%s\t%s' % (word, 1))
+if __name__ == "__main__":
+    despacito = Mapper()
+    despacito.Map()
+    despacito.Close()
