@@ -37,7 +37,7 @@ for line in sys.stdin:
             # write result to STDOUT
             print ('%s\t%s' % (current_word, current_count))
             # Contar palavras que nao repetem
-            total_unique += 1
+            # total_unique += 1
         current_count = count
         current_word = word
 
@@ -50,16 +50,16 @@ if current_word != word:
         total_unique += 1
 
 
-print("============================ Histograma da colecao ============================")
-for word, count in palavras_frequentes.items():
-    print(f"{word}:{count}")
+# print("============================ Histograma da colecao ============================")
+# for word, count in palavras_frequentes.items():
+#     print(f"{word}:{count}")
 
-print("============================ Top 10 ============================")
-palavras_frequentes = dict(sorted(palavras_frequentes.items(), key=lambda item:item[1], reverse=True))
-limite = 0
-for word, count in palavras_frequentes.items():
-    print(f"{word}:{count}")
-    limite += 1
-    if limite >= 10: break
+# print("============================ Top 10 ============================")
+# palavras_frequentes = dict(sorted(palavras_frequentes.items(), key=lambda item:item[1], reverse=True))
+# limite = 0
+# for word, count in palavras_frequentes.items():
+#     print(f"{word}:{count}")
+#     limite += 1
+#     if limite >= 10: break
 
-print("Total unique words: %s" %(total_unique))
+# print("Total unique words: %s" %(total_unique))
