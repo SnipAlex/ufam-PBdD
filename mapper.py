@@ -5,7 +5,7 @@ import nltk
 
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
-class Mapper
+class Mapper:
   def __init__(self):
     H = {}
   def Map(self):
