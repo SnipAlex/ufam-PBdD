@@ -17,7 +17,8 @@ class Mapper:
         if x in punctuations:
           line = line.replace(x, " ")
       words = line.split()
-      self.H[words] += 1
+      for word in words:
+        self.H[word] += 1
       
   def Close(self):
     for word, count in self.H.items():
