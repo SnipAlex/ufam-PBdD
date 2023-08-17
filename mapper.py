@@ -4,9 +4,8 @@ import re
 import nltk
 
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-current_count = None
-current_word = None
-class Mapper:
+
+class Mapper
   def __init__(self):
     H = {}
   def Map(self):
@@ -21,12 +20,8 @@ class Mapper:
       self.H[words] += 1
       
   def Close(self):
-    # word, count = line.split('\t', 1)
     for word, count in self.H.items():
-      if current_word == word:
-        current_count += count
-      else:      
-        print(f"{word}:{count}")
+      print(f"{word}:{count}")
 
 if __name__ == "__main__":
     despacito = Mapper()
