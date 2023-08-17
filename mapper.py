@@ -2,12 +2,12 @@ import sys
 import io
 import re
 import nltk
-from collections import defaultdict
+
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
 class Mapper:
   def __init__(self):
-    self.H = defaultdict(int)
+    self.H = {}
   def Map(self):
     for line in sys.stdin:
       line = line.strip()
