@@ -6,7 +6,7 @@ import nltk
 punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 current_count = None
 current_word = None
-class Mapper
+class Mapper:
   def __init__(self):
     H = {}
   def Map(self):
