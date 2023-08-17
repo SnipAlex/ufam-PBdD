@@ -7,7 +7,7 @@ punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
 class Mapper:
   def __init__(self):
-    H = {}
+    self.H = {}
   def Map(self):
     for line in sys.stdin:
       line = line.strip()
