@@ -21,7 +21,7 @@ for line in io.TextIOWrapper(sys.stdin.buffer, encoding='latin1'):
       #ignore/discard this line
       continue
 
-    # palavras_frequentes[word] = count
+    palavras_frequentes[word] = count
 
     if count == 1:
         total_unique += 1
