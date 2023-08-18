@@ -18,8 +18,10 @@ class Mapper:
           line = line.replace(x, " ")
       words = line.split()
       for word in words:
-        if word:
+        if word in self.H:
           self.H[word] += 1
+        else:
+          self.H[word] = 1
       
   def Close(self):
     for word, count in self.H.items():
