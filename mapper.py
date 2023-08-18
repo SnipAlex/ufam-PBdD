@@ -28,6 +28,6 @@ class Mapper:
       print(f"{word}:{count}")
 
 if __name__ == "__main__":
-    despacito = Mapper()
-    despacito.Map()
-    despacito.Close()
+  despacito = Mapper()
+  despacito.Map()
+  despacito.Close()
