@@ -24,8 +24,9 @@ class Mapper:
           self.H[word] = 1
       
   def Close(self):
-    for word, count in self.H.items():
-      print(f"{word}:{count}")
+    for word in self.H.items():
+      # print(f"{word}:{count}")
+      print("%s\t%s"%(word,self.H[word]))
 
 if __name__ == "__main__":
   despacito = Mapper()
