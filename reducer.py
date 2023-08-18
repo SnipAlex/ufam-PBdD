@@ -38,7 +38,7 @@ for i in range(10):
 print("============================ Top 10 ============================")
 
 limite = 0
-for word, count in palavras_frequentes.items():
+for word, count in palavras_frequentes:
     print(f"{word}:{count}")
     limite += 1
     if limite >= 10: break
