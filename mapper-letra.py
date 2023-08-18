@@ -12,7 +12,7 @@ class Mapper:
     for line in sys.stdin:
       line = line.strip()
       # line = re.sub(r'[^\w\s]', '',line)
-      
+      line = re.sub(r'[^A-Za-z\s]+', '',line)
       for x in line:
         if x in punctuations:
           line = line.replace(x, " ")
