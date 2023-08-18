@@ -24,7 +24,7 @@ class Mapper:
           self.H[word] = 1
       
   def Close(self):
-    for word in self.H.items():
+    for word in self.H:
       # print(f"{word}:{count}")
       print("%s\t%s"%(word,self.H[word]))
 
