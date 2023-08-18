@@ -16,7 +16,7 @@ class Mapper:
       for x in line:
         if x in punctuations:
           line = line.replace(x, " ")
-      words = line.split()
+      words = line.split('\t')
       for word in words:
         self.H[word] += 1
       
