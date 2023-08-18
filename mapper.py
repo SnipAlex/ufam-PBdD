@@ -9,7 +9,7 @@ class Mapper:
   def __init__(self):
     self.H = {}
   def Map(self):
-    for line in io.TextIOWrapper(sys.stdin.buffer, encoding='latin1'):
+    for line in sys.stdin:
       line = line.strip()
       # line = re.sub(r'[^\w\s]', '',line)
       line = line.lower()

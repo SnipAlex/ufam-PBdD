@@ -1,4 +1,4 @@
-from operator import itemgetter
+import operator
 import io
 import sys
 
@@ -13,7 +13,7 @@ for line in io.TextIOWrapper(sys.stdin.buffer, encoding='latin1'):
     line = line.strip()
 
     # parse the input we got from mapper.py
-    line, count = line.split('\t', 1)
+    word, count = line.split('\t', 1)
     try:
       count = int(count)
     except ValueError:
@@ -21,20 +21,22 @@ for line in io.TextIOWrapper(sys.stdin.buffer, encoding='latin1'):
       #ignore/discard this line
       continue
 
-    if count > 1:
+    # palavras_frequentes[word] = count
+
+    if count == 1:
         total_unique += 1
     
 
 print("============================ Histograma da colecao ============================")
 # for word, count in line.items():
 #     print(f"{word}:{count}")
-palavras_frequentes = dict(sorted(line.items(), key=lambda item:item[1], reverse=True))
+palavras_frequentes = sorted(palavras_frequentes.items(), key=operator.itemgetter(1), reverse=True)
 
 for i in range(10):
    print(palavras_frequentes[i])
 
 print("============================ Top 10 ============================")
-palavras_frequentes = dict(sorted(line.items(), key=lambda item:item[1], reverse=True))
+
 limite = 0
 for word, count in palavras_frequentes.items():
     print(f"{word}:{count}")
